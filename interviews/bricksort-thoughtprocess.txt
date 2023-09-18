@@ -1,0 +1,49 @@
+MINIMUM num of bricks to make it step up one by one (either strictly increasing/decreasing)
+
+[ 1, 5, 5, 5, 1, 1, 1, 1, 1, 1, 5 ]
+
+[ 1, 2, 4, 1, 1, 1 ]
+[ 1, 2, 4, 4, 1, 1 ]
+>> [ 2, 3, 4, 5, 6, 7 ] (14)
+>> [ 7, 6, 5, 4, 3, 2 ] (14)
+
+int HH = take the highest indexed maxNum subtract highest indexed minNum:
+    -> |3 - 5| = 2
+int LL = take the lowest indexed maxNum subtract lowest indexed minNum:
+    -> |2 - 0| = 2
+
+if LL > HH: (only ran if multi index exists for BOTH)
+    decreasing is better (?)
+
+    maxDict = {highest_index = ?, lowest_index = ?, value = ?}
+    minDict = {highest_index = ?, lowest_index?, value = ?}
+
+[ 1, 1, 4, 2, 4, 1 ] -> HH = |4 - 5| = 1, LL = |0 - 2| = 2
+>> [ 8, 7, 6, 5, 4, 3 ] (20) LL > HH && decreasing is better (point of reference is the highest indexed maxNum)
+>> [ 4, 5, 6, 7, 8, 9 ] (27)
+
+[ 1, 4, 2, 4, 1, 1 ] -> HH = |4 - 5| = 1, LL = |0 - 2| = 2
+>> [ 3, 4, 5, 6, 7, 8 ] (27) 
+>> [ 9, 8, 7, 6, 5, 4 ] (20)
+
+[ 1, 4, 3, 5, 2, 5 ]
+
+[ 1, 1, 4, 2, 4, 4 ]
+
+store largest && smallest index of largest number
+
+    if its increasing --> take largest index to be the point of reference
+
+for 
+
+___/|
+
+--> [ 2, 3, 4 ]
+--> [ 6, 5, 4 ]
+
+1. O(n) --> find largest number + smallest number
+    i. maxNum = [2, 4] # [index, value]
+    ii. minNum = [0, 1] # [index, value]
+2. determine if its stringly increasing/decreasing
+3. rhs is n/2
+4. lhs is 
